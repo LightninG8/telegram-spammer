@@ -1,0 +1,908 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1100</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1000</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(45, 45, 45);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QFrame" name="Content">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QFrame" name="frame_left_menu">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>150</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(35, 35, 35);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item alignment="Qt::AlignTop">
+           <widget class="QFrame" name="frame_top_menus">
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_2">
+             <item>
+              <widget class="QPushButton" name="btn_page_new">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>40</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+	color: rgb(255, 255, 255);
+	background-color: rgb(35, 35, 35);
+	border: 0px solid;
+}
+QPushButton:hover {
+	background-color: rgb(85, 170, 255);
+}</string>
+               </property>
+               <property name="text">
+                <string>Рассылка</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_page_api_settings">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>40</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+	color: rgb(255, 255, 255);
+	background-color: rgb(35, 35, 35);
+	border: 0px solid;
+}
+QPushButton:hover {
+	background-color: rgb(85, 170, 255);
+}</string>
+               </property>
+               <property name="text">
+                <string>Настройки API</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_page_account_settings">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>40</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+	color: rgb(255, 255, 255);
+	background-color: rgb(35, 35, 35);
+	border: 0px solid;
+}
+
+QPushButton.isActive,
+QPushButton:hover {
+	background-color: rgb(85, 170, 255);
+}
+</string>
+               </property>
+               <property name="text">
+                <string>Настройки аккаунта</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_page_help">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>40</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+	color: rgb(255, 255, 255);
+	background-color: rgb(35, 35, 35);
+	border: 0px solid;
+}
+QPushButton:hover {
+	background-color: rgb(85, 170, 255);
+}</string>
+               </property>
+               <property name="text">
+                <string>Инструкция</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_pages">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <widget class="QStackedWidget" name="stackedWidget">
+            <property name="currentIndex">
+             <number>1</number>
+            </property>
+            <widget class="QWidget" name="page_new">
+             <widget class="QLabel" name="label_1">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>921</width>
+                <height>41</height>
+               </rect>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>40</pointsize>
+               </font>
+              </property>
+              <property name="autoFillBackground">
+               <bool>false</bool>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #FFF;</string>
+              </property>
+              <property name="text">
+               <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:40pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Новая рассылка&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_7">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>60</y>
+                <width>101</width>
+                <height>16</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #FFF</string>
+              </property>
+              <property name="text">
+               <string>Сообщение</string>
+              </property>
+             </widget>
+             <widget class="QPlainTextEdit" name="sender_message">
+              <property name="geometry">
+               <rect>
+                <x>140</x>
+                <y>60</y>
+                <width>301</width>
+                <height>221</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: #FFF</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_8">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>300</y>
+                <width>101</width>
+                <height>16</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #FFF</string>
+              </property>
+              <property name="text">
+               <string>Тип вложения</string>
+              </property>
+             </widget>
+             <widget class="QComboBox" name="sender_attachment_type">
+              <property name="geometry">
+               <rect>
+                <x>140</x>
+                <y>300</y>
+                <width>121</width>
+                <height>21</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: #FFF</string>
+              </property>
+              <property name="editable">
+               <bool>false</bool>
+              </property>
+              <item>
+               <property name="text">
+                <string>Пусто</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Фото</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Видео</string>
+               </property>
+              </item>
+             </widget>
+             <widget class="QPushButton" name="sender_attachment_file">
+              <property name="geometry">
+               <rect>
+                <x>140</x>
+                <y>340</y>
+                <width>121</width>
+                <height>21</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: #FFF</string>
+              </property>
+              <property name="text">
+               <string>Выбрать файл</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_9">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>380</y>
+                <width>111</width>
+                <height>16</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #FFF</string>
+              </property>
+              <property name="text">
+               <string>Список контактов</string>
+              </property>
+             </widget>
+             <widget class="QPushButton" name="sender_contacts_file">
+              <property name="geometry">
+               <rect>
+                <x>140</x>
+                <y>380</y>
+                <width>121</width>
+                <height>21</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: #FFF</string>
+              </property>
+              <property name="text">
+               <string>Выбрать файл</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_10">
+              <property name="geometry">
+               <rect>
+                <x>470</x>
+                <y>40</y>
+                <width>111</width>
+                <height>16</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #FFF</string>
+              </property>
+              <property name="text">
+               <string>Лог выполнения</string>
+              </property>
+             </widget>
+             <widget class="QPushButton" name="sender_btn_start">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>550</y>
+                <width>141</width>
+                <height>31</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: #FFF</string>
+              </property>
+              <property name="text">
+               <string>Начать рассылку</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_11">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>340</y>
+                <width>101</width>
+                <height>16</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #FFF</string>
+              </property>
+              <property name="text">
+               <string>Файл вложения</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_attachment_file">
+              <property name="geometry">
+               <rect>
+                <x>270</x>
+                <y>340</y>
+                <width>161</width>
+                <height>16</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #AAAAAA</string>
+              </property>
+              <property name="text">
+               <string>Название файла</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_contacts_file">
+              <property name="geometry">
+               <rect>
+                <x>270</x>
+                <y>380</y>
+                <width>161</width>
+                <height>16</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #AAAAAA</string>
+              </property>
+              <property name="text">
+               <string>Название файла</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_12">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>420</y>
+                <width>111</width>
+                <height>16</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #FFF</string>
+              </property>
+              <property name="text">
+               <string>Задержка (в сек)</string>
+              </property>
+             </widget>
+             <widget class="QLineEdit" name="sender_delay">
+              <property name="geometry">
+               <rect>
+                <x>140</x>
+                <y>420</y>
+                <width>121</width>
+                <height>22</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: #FFF</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_13">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>460</y>
+                <width>111</width>
+                <height>16</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #FFF</string>
+              </property>
+              <property name="text">
+               <string>Кол-во сообщений</string>
+              </property>
+             </widget>
+             <widget class="QLineEdit" name="sender_messages_count">
+              <property name="geometry">
+               <rect>
+                <x>140</x>
+                <y>460</y>
+                <width>121</width>
+                <height>22</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: #FFF</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_14">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>490</y>
+                <width>111</width>
+                <height>31</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #FFF</string>
+              </property>
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Уникальные&lt;br/&gt;сообщения&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+             <widget class="QCheckBox" name="sender_unqiue">
+              <property name="geometry">
+               <rect>
+                <x>140</x>
+                <y>500</y>
+                <width>16</width>
+                <height>20</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+             <widget class="QTextBrowser" name="textBrowser">
+              <property name="geometry">
+               <rect>
+                <x>470</x>
+                <y>60</y>
+                <width>441</width>
+                <height>601</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: #fff</string>
+              </property>
+             </widget>
+            </widget>
+            <widget class="QWidget" name="page_api_settings">
+             <widget class="QLabel" name="label">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>201</width>
+                <height>41</height>
+               </rect>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>40</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #FFF;</string>
+              </property>
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Настройки API&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+             <widget class="QLineEdit" name="input_api_id">
+              <property name="geometry">
+               <rect>
+                <x>160</x>
+                <y>60</y>
+                <width>141</width>
+                <height>22</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: #FFF</string>
+              </property>
+             </widget>
+             <widget class="QLineEdit" name="input_api_hash">
+              <property name="geometry">
+               <rect>
+                <x>160</x>
+                <y>100</y>
+                <width>141</width>
+                <height>22</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: #FFF</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_4">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>60</y>
+                <width>111</width>
+                <height>16</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #FFF</string>
+              </property>
+              <property name="text">
+               <string>API id</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_5">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>100</y>
+                <width>111</width>
+                <height>16</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #FFF</string>
+              </property>
+              <property name="text">
+               <string>API hash</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_6">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>140</y>
+                <width>111</width>
+                <height>16</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #FFF</string>
+              </property>
+              <property name="text">
+               <string>Номер телефона</string>
+              </property>
+             </widget>
+             <widget class="QLineEdit" name="input_api_phone">
+              <property name="geometry">
+               <rect>
+                <x>160</x>
+                <y>140</y>
+                <width>141</width>
+                <height>22</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: #FFF</string>
+              </property>
+             </widget>
+             <widget class="QPushButton" name="btn_save_api_settings">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>190</y>
+                <width>93</width>
+                <height>28</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: #FFF</string>
+              </property>
+              <property name="text">
+               <string>Сохранить</string>
+              </property>
+             </widget>
+            </widget>
+            <widget class="QWidget" name="page_account_settings">
+             <widget class="QLabel" name="label_3">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>261</width>
+                <height>41</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #FFF;</string>
+              </property>
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Настройки Аккаунта&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_15">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>60</y>
+                <width>131</width>
+                <height>16</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #FFF</string>
+              </property>
+              <property name="text">
+               <string>Имя</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_16">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>100</y>
+                <width>121</width>
+                <height>16</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #FFF</string>
+              </property>
+              <property name="text">
+               <string>Фамилия</string>
+              </property>
+             </widget>
+             <widget class="QLineEdit" name="account_firstname">
+              <property name="geometry">
+               <rect>
+                <x>140</x>
+                <y>60</y>
+                <width>251</width>
+                <height>22</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: #FFF</string>
+              </property>
+             </widget>
+             <widget class="QLineEdit" name="account_lastname">
+              <property name="geometry">
+               <rect>
+                <x>140</x>
+                <y>100</y>
+                <width>251</width>
+                <height>22</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: #FFF</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_17">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>140</y>
+                <width>121</width>
+                <height>16</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #FFF</string>
+              </property>
+              <property name="text">
+               <string>Описание</string>
+              </property>
+             </widget>
+             <widget class="QPlainTextEdit" name="account_bio">
+              <property name="geometry">
+               <rect>
+                <x>140</x>
+                <y>140</y>
+                <width>251</width>
+                <height>87</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: #FFF</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_18">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>250</y>
+                <width>121</width>
+                <height>16</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #FFF</string>
+              </property>
+              <property name="text">
+               <string>Аватарка</string>
+              </property>
+             </widget>
+             <widget class="QPushButton" name="account_avatar_file">
+              <property name="geometry">
+               <rect>
+                <x>140</x>
+                <y>250</y>
+                <width>111</width>
+                <height>21</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: #FFF</string>
+              </property>
+              <property name="text">
+               <string>Выбрать файл</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="account_avatar_label">
+              <property name="geometry">
+               <rect>
+                <x>260</x>
+                <y>250</y>
+                <width>211</width>
+                <height>16</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #AAA</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+             <widget class="QPushButton" name="account_save_btn">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>300</y>
+                <width>111</width>
+                <height>31</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: #FFF</string>
+              </property>
+              <property name="text">
+               <string>Сохранить</string>
+              </property>
+             </widget>
+            </widget>
+            <widget class="QWidget" name="page_help">
+             <widget class="QLabel" name="label_2">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>60</y>
+                <width>481</width>
+                <height>16</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #fff</string>
+              </property>
+              <property name="text">
+               <string>Хуй знает, спрашивайте у Лёхи</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_19">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>481</width>
+                <height>41</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #fff</string>
+              </property>
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Инструкция&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
