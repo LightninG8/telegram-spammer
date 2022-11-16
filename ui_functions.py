@@ -17,7 +17,8 @@ class UIFunctions():
     def changePage(self, page, button):
       self.ui.stackedWidget.setCurrentWidget(page)
   
-    def saveApiSettings(self):
+
+    def connectApi(self):
       data = self.config
 
       data['api_id'] = self.ui.input_api_id.text()
@@ -26,7 +27,19 @@ class UIFunctions():
 
       saveConfig(data)
 
-      self.updateSender()
+      self.connectSender()
+
+    def disconnectApi(self):
+      data = self.config
+
+      data['api_id'] = self.ui.input_api_id.text()
+      data['api_hash'] = self.ui.input_api_hash.text()
+      data['api_phone'] = self.ui.input_api_phone.text()
+
+      saveConfig(data)
+
+      self.disconnectSender()
+    
     
     def saveSenderSettings(self):
       data = self.config
@@ -66,4 +79,10 @@ class UIFunctions():
     
     def startSender(self):
       self.start()
+
+    def refreshApiStatus(self):
+      self.update()
+
+    def clearProcessedMessages(self):
+      self.clearProcessedMessages()
 

@@ -6,32 +6,53 @@ from pyrogram.types import InputPhoneContact
 import inspect
 import time
 import threading
+import os
+import subprocess
 
 from window import *
+
+def saveConfig(config):
+  with open("config.json", "w") as jsonfile:
+    json.dump(config, jsonfile) # Writing to the file
+    jsonfile.close()
+
 
 class Sender():
   def __init__(self):
     self.config = json.load(open('config.json'))
 
     self.client = Client('telegram-spamer', self.config.get('api_id'), self.config.get('api_hash'), phone_number=self.config.get('api_phone'))
-
+    self.processed_messages = shelve.open('processed_messages.db', writeback=True)
+    
     self.loop = asyncio.get_event_loop()
 
     self.app = QApplication(sys.argv)
     self.window = MainWindow(
-      self.config,
-      self.updateSender,
+      self.connectSender,
+      self.disconnectSender,
       self.updateAccount,
-      self.start
+      self.start,
+      self.clearProcessedMessages
     )
 
     sys.exit(self.app.exec_())
 
 
-  def updateSender(self): 
-    self.window.update()
-    self.client = Client('telegram-spamer', self.config.get('api_id'), self.config.get('api_hash'), phone_number=self.config.get('phone_number'))
+  def connectSender(self):     
+    os.system('start python connect.py')
 
+  def disconnectSender(self):
+    try:
+      path = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'telegram-spamer.session')
+      os.remove(path)
+
+      data = self.config
+
+      data['is_connected'] = False
+
+      saveConfig(data)
+    except:
+      print('error')
 
   def start(self):
     thread = threading.Thread(target=self.loop.run_until_complete, args=(self._start(), ))
@@ -39,10 +60,6 @@ class Sender():
 
   async def _start(self):
     async with self.client:
-      self.window.log('Рассылка запущена')
-
-      processed_messages = shelve.open('processed_messages.db', writeback=True)
-
       phones = [line.strip() for line in open(self.config.get('sender_contacts_file_path'))]
 
       # Счётчик отправленных сообщений
@@ -82,8 +99,8 @@ class Sender():
         if id:
 
           # Проверяем отправили ли мы сообщение этому контакту - пропускаем
-          if str(id) in processed_messages and self.config.get('sender_unqiue'):
-            self.window.log(f'Сообщение для {phone} уже было доставлено')
+          if str(id) in self.processed_messages and self.config.get('sender_unqiue'):
+            self.window.log(f'Номер {phone} уже был обработан')
             continue
 
           # Отправляем сообщение в зависимости от типа вложения
@@ -106,7 +123,7 @@ class Sender():
             )
 
           messages_sended += 1
-          processed_messages[str(id)] = True
+          self.processed_messages[str(id)] = True
 
           self.window.log(f'Сообщение для {phone} доставлено. Писем отправлено: {messages_sended}')
       
@@ -116,7 +133,7 @@ class Sender():
           self.window.log(f'Задержка { delay } секунд')
           await asyncio.sleep(delay)
         else:
-          processed_messages[str(id)] = True
+          self.processed_messages[str(id)] = True
           self.window.log(f'Не получилось найти контакт {phone}')
 
   def updateAccount(self):
@@ -131,6 +148,9 @@ class Sender():
         last_name=self.config.get('account_lastname'),
         bio=self.config.get('account_bio')
       )
+
+  def clearProcessedMessages(self):
+    self.processed_messages.clear()
 
 
 if __name__ == "__main__":

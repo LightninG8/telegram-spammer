@@ -221,7 +221,7 @@ QPushButton:hover {
           <item>
            <widget class="QStackedWidget" name="stackedWidget">
             <property name="currentIndex">
-             <number>1</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="page_new">
              <widget class="QLabel" name="label_1">
@@ -559,6 +559,22 @@ p, li { white-space: pre-wrap; }
                <string notr="true">background-color: #fff</string>
               </property>
              </widget>
+             <widget class="QPushButton" name="sender_btn_clear_processed">
+              <property name="geometry">
+               <rect>
+                <x>170</x>
+                <y>500</y>
+                <width>191</width>
+                <height>21</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: #FFF</string>
+              </property>
+              <property name="text">
+               <string>Очистить список отправленных</string>
+              </property>
+             </widget>
             </widget>
             <widget class="QWidget" name="page_api_settings">
              <widget class="QLabel" name="label">
@@ -669,11 +685,11 @@ p, li { white-space: pre-wrap; }
                <string notr="true">background-color: #FFF</string>
               </property>
              </widget>
-             <widget class="QPushButton" name="btn_save_api_settings">
+             <widget class="QPushButton" name="btn_connect_api">
               <property name="geometry">
                <rect>
                 <x>10</x>
-                <y>190</y>
+                <y>200</y>
                 <width>93</width>
                 <height>28</height>
                </rect>
@@ -682,7 +698,71 @@ p, li { white-space: pre-wrap; }
                <string notr="true">background-color: #FFF</string>
               </property>
               <property name="text">
-               <string>Сохранить</string>
+               <string>Подключить</string>
+              </property>
+             </widget>
+             <widget class="QPushButton" name="btn_disconnect_api">
+              <property name="geometry">
+               <rect>
+                <x>130</x>
+                <y>200</y>
+                <width>93</width>
+                <height>28</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: #FFF</string>
+              </property>
+              <property name="text">
+               <string>Отключить</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_20">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>260</y>
+                <width>111</width>
+                <height>16</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #FFF</string>
+              </property>
+              <property name="text">
+               <string>Статус:</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="api_status_label">
+              <property name="geometry">
+               <rect>
+                <x>70</x>
+                <y>260</y>
+                <width>111</width>
+                <height>16</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #FFF</string>
+              </property>
+              <property name="text">
+               <string>Отключено</string>
+              </property>
+             </widget>
+             <widget class="QPushButton" name="btn_refresh_api_status">
+              <property name="geometry">
+               <rect>
+                <x>150</x>
+                <y>260</y>
+                <width>71</width>
+                <height>21</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: #FFF</string>
+              </property>
+              <property name="text">
+               <string>Обновить</string>
               </property>
              </widget>
             </widget>

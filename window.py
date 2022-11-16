@@ -27,16 +27,19 @@ from ui_functions import *
 class MainWindow(QMainWindow):
     def __init__(
         self,
-        config,
-        updateSender,
+        connectSender,
+        disconnectSender,
         updateAccount,
-        start
+        start,
+        clearProcessedMessages
       ):
         QMainWindow.__init__(self)
-        self.config = config
-        self.updateSender = updateSender
+        self.config = json.load(open('config.json'))
+        self.connectSender = connectSender
+        self.disconnectSender = disconnectSender
         self.updateAccount = updateAccount
         self.start = start
+        self.clearProcessedMessages = clearProcessedMessages
 
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
@@ -61,11 +64,15 @@ class MainWindow(QMainWindow):
         self.ui.sender_messages_count.textChanged.connect(lambda: UIFunctions.saveSenderSettings(self))
         self.ui.sender_unqiue.clicked.connect(lambda: UIFunctions.saveSenderSettings(self))
         self.ui.sender_btn_start.clicked.connect(lambda: UIFunctions.startSender(self))
+        self.ui.sender_btn_clear_processed.clicked.connect(lambda: UIFunctions.clearProcessedMessages(self))
 
         # PAGE 2
         self.ui.btn_page_api_settings.clicked.connect(lambda: UIFunctions.changePage(self, self.ui.page_api_settings, self.ui.btn_page_api_settings))
 
-        self.ui.btn_save_api_settings.clicked.connect(lambda: UIFunctions.saveApiSettings(self))
+        self.ui.btn_connect_api.clicked.connect(lambda: UIFunctions.connectApi(self))
+        self.ui.btn_disconnect_api.clicked.connect(lambda: UIFunctions.disconnectApi(self))
+        self.ui.btn_refresh_api_status.clicked.connect(lambda: UIFunctions.refreshApiStatus(self))
+
 
         # PAGE 3
         self.ui.btn_page_account_settings.clicked.connect(lambda: UIFunctions.changePage(self, self.ui.page_account_settings, self.ui.btn_page_account_settings))
@@ -86,6 +93,11 @@ class MainWindow(QMainWindow):
         self.ui.input_api_id.setText(self.config.get('api_id'))
         self.ui.input_api_hash.setText(self.config.get('api_hash'))
         self.ui.input_api_phone.setText(self.config.get('api_phone'))
+
+        if self.config.get('is_connected'):
+          self.ui.api_status_label.setText('Подключено')
+        else:
+          self.ui.api_status_label.setText('Отключено')
         
 
         # Sender Settings
@@ -104,6 +116,8 @@ class MainWindow(QMainWindow):
         self.ui.account_avatar_label.setText(self.config.get('account_avatar_file').split('/')[-1])
 
     def update(self):
+      self.config = json.load(open('config.json'))
+
       self.initFormsByConfig()
 
     def log(self, text):
