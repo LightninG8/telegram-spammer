@@ -17,7 +17,6 @@ from PyQt5.QtWidgets import *
 
 # GUI FILE
 from GUI.ui_main import Ui_MainWindow
-from GUI.ui_log import Ui_log
 # IMPORT FUNCTIONS
 from ui_functions import *
 
@@ -69,15 +68,24 @@ class MainWindow(QMainWindow):
         # PAGE 2
         self.ui.btn_page_api_settings.clicked.connect(lambda: UIFunctions.changePage(self, self.ui.page_api_settings, self.ui.btn_page_api_settings))
 
-        self.ui.btn_connect_api.clicked.connect(lambda: UIFunctions.connectApi(self))
-        self.ui.btn_disconnect_api.clicked.connect(lambda: UIFunctions.disconnectApi(self))
+        self.ui.btn_connect_api.clicked.connect(self.connectSender)
+        self.ui.btn_disconnect_api.clicked.connect(self.disconnectSender)
+
+        self.ui.input_api_id.textChanged.connect(lambda: UIFunctions.saveApiSettings(self))
+        self.ui.input_api_hash.textChanged.connect(lambda: UIFunctions.saveApiSettings(self))
+        self.ui.input_api_phone.textChanged.connect(lambda: UIFunctions.saveApiSettings(self))
+
         self.ui.btn_refresh_api_status.clicked.connect(lambda: UIFunctions.refreshApiStatus(self))
 
 
         # PAGE 3
         self.ui.btn_page_account_settings.clicked.connect(lambda: UIFunctions.changePage(self, self.ui.page_account_settings, self.ui.btn_page_account_settings))
 
-        self.ui.account_save_btn.clicked.connect(lambda: UIFunctions.saveAccountSettings(self))
+        self.ui.account_save_btn.clicked.connect(self.updateAccount)
+
+        self.ui.account_firstname.textChanged.connect(lambda: UIFunctions.saveAccountSettings(self))
+        self.ui.account_lastname.textChanged.connect(lambda: UIFunctions.saveAccountSettings(self))
+        self.ui.account_bio.textChanged.connect(lambda: UIFunctions.saveAccountSettings(self))
         self.ui.account_avatar_file.clicked.connect(lambda: UIFunctions.inputFile(self,'account_avatar_file', self.ui.account_avatar_label))
 
         # PAGE 4

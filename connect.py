@@ -8,7 +8,10 @@ def saveConfig(config):
 
 
 config = json.load(open('config.json'))
-client = Client('telegram-spamer', int(config.get('api_id')), config.get('api_hash'), phone_number=config.get('phone_number'))
+try:
+  client = Client('telegram-spammer', config.get('api_id'), config.get('api_hash'), phone_number=config.get('api_phone'))
+except:
+  print('error')
 
 with client:
   data = config

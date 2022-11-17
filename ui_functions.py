@@ -18,28 +18,14 @@ class UIFunctions():
       self.ui.stackedWidget.setCurrentWidget(page)
   
 
-    def connectApi(self):
+    def saveApiSettings(self):
       data = self.config
 
       data['api_id'] = self.ui.input_api_id.text()
       data['api_hash'] = self.ui.input_api_hash.text()
       data['api_phone'] = self.ui.input_api_phone.text()
 
-      saveConfig(data)
-
-      self.connectSender()
-
-    def disconnectApi(self):
-      data = self.config
-
-      data['api_id'] = self.ui.input_api_id.text()
-      data['api_hash'] = self.ui.input_api_hash.text()
-      data['api_phone'] = self.ui.input_api_phone.text()
-
-      saveConfig(data)
-
-      self.disconnectSender()
-    
+      saveConfig(data)  
     
     def saveSenderSettings(self):
       data = self.config
@@ -74,8 +60,6 @@ class UIFunctions():
       data['account_bio'] = self.ui.account_bio.toPlainText()
 
       saveConfig(data)
-
-      self.updateAccount()
     
     def startSender(self):
       self.start()

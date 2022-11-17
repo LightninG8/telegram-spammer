@@ -16,6 +16,9 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1100, 700)
         MainWindow.setMinimumSize(QtCore.QSize(1000, 500))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("GUI\\../telegram-spammer.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("background-color: rgb(45, 45, 45);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -216,6 +219,7 @@ class Ui_MainWindow(object):
         self.input_api_id = QtWidgets.QLineEdit(self.page_api_settings)
         self.input_api_id.setGeometry(QtCore.QRect(160, 60, 141, 22))
         self.input_api_id.setStyleSheet("background-color: #FFF")
+        self.input_api_id.setInputMethodHints(QtCore.Qt.ImhNone)
         self.input_api_id.setObjectName("input_api_id")
         self.input_api_hash = QtWidgets.QLineEdit(self.page_api_settings)
         self.input_api_hash.setGeometry(QtCore.QRect(160, 100, 141, 22))
@@ -309,14 +313,14 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.page_account_settings)
         self.page_help = QtWidgets.QWidget()
         self.page_help.setObjectName("page_help")
-        self.label_2 = QtWidgets.QLabel(self.page_help)
-        self.label_2.setGeometry(QtCore.QRect(0, 60, 481, 16))
-        self.label_2.setStyleSheet("color: #fff")
-        self.label_2.setObjectName("label_2")
         self.label_19 = QtWidgets.QLabel(self.page_help)
         self.label_19.setGeometry(QtCore.QRect(0, 0, 481, 41))
         self.label_19.setStyleSheet("color: #fff")
         self.label_19.setObjectName("label_19")
+        self.textBrowser_2 = QtWidgets.QTextBrowser(self.page_help)
+        self.textBrowser_2.setGeometry(QtCore.QRect(0, 50, 921, 621))
+        self.textBrowser_2.setStyleSheet("background-color: #fff")
+        self.textBrowser_2.setObjectName("textBrowser_2")
         self.stackedWidget.addWidget(self.page_help)
         self.verticalLayout_5.addWidget(self.stackedWidget)
         self.horizontalLayout_2.addWidget(self.frame_pages)
@@ -324,12 +328,12 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(3)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Telegram spammer"))
         self.btn_page_new.setText(_translate("MainWindow", "Рассылка"))
         self.btn_page_api_settings.setText(_translate("MainWindow", "Настройки API"))
         self.btn_page_account_settings.setText(_translate("MainWindow", "Настройки аккаунта"))
@@ -372,8 +376,37 @@ class Ui_MainWindow(object):
         self.label_18.setText(_translate("MainWindow", "Аватарка"))
         self.account_avatar_file.setText(_translate("MainWindow", "Выбрать файл"))
         self.account_save_btn.setText(_translate("MainWindow", "Сохранить"))
-        self.label_2.setText(_translate("MainWindow", "Хуй знает, спрашивайте у Лёхи"))
         self.label_19.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt;\">Инструкция</span></p></body></html>"))
+        self.textBrowser_2.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">Порядок работы:</span><br />1) Настройка API</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">2) Рассылка</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">1 шаг Настройка API</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Необходимо добавить аккаунт<br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">На сайте my.telegram.org регистрируем новое telegram приложение и получаем api_id и api_key (либо используем мои, но если часто их использовать, то просто аккаунт заблокируют)<br />api_id: <span style=\" font-family:\'Consolas\',\'Courier New\',\'monospace\'; font-size:8pt; color:#f78c6c;\">29492858 </span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">api_hash: <span style=\" font-family:\'Consolas\',\'Courier New\',\'monospace\'; font-size:8pt; color:#c3e88d;\">2bfebf140a4f000b1dcc1899e669967c</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'Consolas\',\'Courier New\',\'monospace\'; font-size:8pt; color:#c3e88d;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Consolas\',\'Courier New\',\'monospace\'; font-size:8pt; color:#000000;\">1) В поле api_phone вводим номер телефона </span><span style=\" font-family:\'Consolas\',\'Courier New\',\'monospace\'; font-size:8pt; font-weight:600; color:#000000;\">!!!обязательно с + в начале!!!</span><span style=\" font-family:\'Consolas\',\'Courier New\',\'monospace\'; font-size:8pt; color:#000000;\"><br />2) Нажимаем на кнопку &quot;Подключить&quot; Открывается окно (необходимо подождать секунд 10)<br />3) В него вводим ещё раз номер телефона а потом код, который пришёл в телеграм (либо сразу код, читаем что просят в консоли)<br />4) Нажимаем на кнопку &quot;Обновить&quot;, удостоверяемся, что статус - Подключено<br /><br /></span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Consolas\',\'Courier New\',\'monospace\'; font-size:12pt; font-weight:600; color:#000000;\">2 шаг Рассылка</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Consolas\',\'Courier New\',\'monospace\'; font-size:8pt; color:#000000;\">После настройки можно сделать рассылку:</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Consolas\',\'Courier New\',\'monospace\'; font-size:8pt; color:#000000;\"><br />1) Указываем сообщение<br />2) выбираем тип файла<br />3) загружаем файл (если загрузить файл и выбрать тип &quot;Пусто&quot;, то файл не отправится),<br />4) загружаем список контактов (обычный .txt файл с номером в каждой строчке)</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Consolas\',\'Courier New\',\'monospace\'; font-size:8pt; color:#000000;\">5) Выбираем задержку, желательно 300 секунд, чтобы не прилетел бан</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Consolas\',\'Courier New\',\'monospace\'; font-size:8pt; color:#000000;\">6) Выбираем количество сообщений (оставляем поле пустым, если хотим, чтобы отправились все сообщения<br />7) Выбираем уникальные сообщения - при включении этой функции если второй раз включить рассылку, то сообщение не отправится второй раз тем, кому оно уже пришло. Кнопка - &quot;Очистить список отправленных&quot; чтобы очистить список тех, кому сообщение уже было отправлено<br /></span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Consolas\',\'Courier New\',\'monospace\'; font-size:8pt; font-weight:600; color:#000000;\">!!! Ультра важно !!!</span><span style=\" font-family:\'Consolas\',\'Courier New\',\'monospace\'; font-size:8pt; color:#000000;\"><br />Если закрыть программу - рассылка перестанет работать<br /><br />Единственный способ прекратить рассылку - закрыть программу<br /><br />Единственный способ запустить новую рассылку - закрыть программу, изменить сообщение, вложение и тд и запустить<br /><br />Если рассылка не работает, то проверяем подключение в настройках API, отключаемся и подключаемся заново, нажимаем кнопку &quot;обновить&quot;, чтобы удостовериться, что статус &quot;подключено&quot;<br /></span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Consolas\',\'Courier New\',\'monospace\'; font-size:8pt; color:#000000;\">Сообщение &quot;Не получилось найти контакт&quot; означает, что такой аккаунт в телеграме не зарегистрирован, либо недоступен для добавления по номеру телефона<br /><br /></span><span style=\" font-family:\'Consolas\',\'Courier New\',\'monospace\'; font-size:12pt; font-weight:600; color:#000000;\">Настройки Аккаунта</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Consolas\',\'Courier New\',\'monospace\'; font-size:8pt; color:#000000;\"><br />Этот раздел чтобы через Telegram Spamer изменить информацию в профиле</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Consolas\',\'Courier New\',\'monospace\'; font-size:8pt; color:#000000;\"><br /></span><span style=\" font-family:\'Consolas\',\'Courier New\',\'monospace\'; font-size:8pt; font-weight:600; color:#000000;\">!!! Не отображает значения, которые стояли в телеграме изначально, или которые мы меняли руками в телеграме потом</span><span style=\" font-family:\'Consolas\',\'Courier New\',\'monospace\'; font-size:8pt; color:#000000;\"><br /></span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Consolas\',\'Courier New\',\'monospace\'; font-size:8pt; font-weight:600; color:#000000;\">!!! программа ультра сырая и багованная, так как это мой первый опыт создания десктопных приложений</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'Consolas\',\'Courier New\',\'monospace\'; font-size:8pt; font-weight:600; color:#000000;\"><br /></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'Consolas\',\'Courier New\',\'monospace\'; font-size:8pt; color:#000000;\"><br /></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'Consolas\',\'Courier New\',\'monospace\'; font-size:8pt; color:#000000;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Consolas\',\'Courier New\',\'monospace\'; font-size:8pt; font-weight:600; color:#000000;\"><br />Автор: Алексей Кесслер</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Consolas\',\'Courier New\',\'monospace\'; font-size:8pt; font-weight:600; color:#000000;\">Telegram: Aleksey_Kessler</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'Consolas\',\'Courier New\',\'monospace\'; font-size:8pt; color:#000000;\"><br /></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'Consolas\',\'Courier New\',\'monospace\'; font-size:8pt; color:#000000;\"><br /></p></body></html>"))
 
 
 if __name__ == "__main__":

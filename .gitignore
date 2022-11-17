@@ -1,0 +1,8 @@
+/build
+/dist
+
+./telegram-spammer.session
+./telegram-spammer.spec
+./processed_messages.db.bak
+./processed_messages.db.dat
+./processed_messages.db.dir
