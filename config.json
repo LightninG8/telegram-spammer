@@ -1,17 +1,1 @@
-{
-  "api_id": "",
-  "api_hash": "",
-  "api_phone": "",
-  "sender_message": "",
-  "sender_attachment_type": 0,
-  "sender_attacment_file_path": "",
-  "sender_contacts_file_path": "",
-  "sender_delay": "",
-  "sender_messages_count": "",
-  "sender_unqiue": false,
-  "account_avatar_file": "",
-  "account_firstname": "",
-  "account_lastname": "",
-  "account_bio": "",
-  "is_connected": false
-}
+{"api_id": "", "api_hash": "", "api_phone": "", "sender_message": "", "sender_attachment_type": 0, "sender_attacment_file_path": "", "sender_contacts_file_path": "", "sender_delay": "", "sender_messages_count": "", "sender_unqiue": true, "account_avatar_file": "", "account_firstname": "", "account_lastname": "", "account_bio": "", "is_connected": false}

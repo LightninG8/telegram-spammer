@@ -8,7 +8,7 @@ a = Analysis(
     ['telegram-spammer.py'],
     pathex=[],
     binaries=[],
-    datas=[('config.json', '.'), ('connect.py', '.'), ('telegram-spammer.ico', '.')],
+    datas=[('telegram-spammer.ico', '.'), ('config.json', '.'), ('connect.py', '.'), ('processed_messages.db.bak', '.'), ('processed_messages.db.dat', '.'), ('processed_messages.db.dir', '.')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

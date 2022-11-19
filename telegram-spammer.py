@@ -1,3 +1,6 @@
+# pyinstaller --onedir --windowed --icon="telegram-spammer.ico" --add-data="telegram-spammer.ico;." --add-data="config.json;." --add-data="connect.py;." --add-data="processed_messages.db.bak;." --add-data="processed_messages.db.dat;." --add-data="processed_messages.db.dir;." telegram-spammer.py
+
+
 from pyrogram import Client # телеграм клиент
 import shelve # запись информации в файл
 import json
